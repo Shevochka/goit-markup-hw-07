@@ -34,13 +34,14 @@
     border: 1px solid #afb1b8;
     border-radius: 4px;
     transition: border 250ms var(--timing-function), color 250ms var(--timing-function);
+    &:hover,
+    &:focus {
+      border: 1px solid var(--accent-color);
+      color: var(--accent-color);
+    }
   }
   .clients-link-icon {
     fill: currentColor;
   }
   
-  .clients-link:hover,
-  .clients-link:focus {
-    border: 1px solid var(--accent-color);
-    color: var(--accent-color);
-  }
+ 

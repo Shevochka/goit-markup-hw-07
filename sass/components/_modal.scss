@@ -38,12 +38,13 @@
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 50%;
     transition: color 250ms var(--timing-function), border 250ms var(--timing-function);
+    &:hover,
+    &:focus {
+      border: 1px solid var(--accent-color);
+      color: var(--accent-color);
+    }
   }
-  .btn_close:hover,
-  .btn_close:focus {
-    border: 1px solid var(--accent-color);
-    color: var(--accent-color);
-  }
+  
   .icon-close {
     fill: currentColor;
   }
@@ -91,12 +92,19 @@
     color: var(--title-text-color);
     outline-color: transparent;
     transition: border 250ms var(--timing-function), fill 250ms var(--timing-function);
-  }
-  .form-field__input:focus {
-    border: 2px solid var(--accent-color);
-  }
-  .form-field__input:focus + .form-field__icon {
-    fill: var(--accent-color);
+    
+    &:focus {
+      border: 2px solid var(--accent-color);
+    }
+    &::placeholder {
+      display: flex;
+      align-items: center;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: calc(20 / 16);
+      letter-spacing: 0.03em;
+      color: rgba(255, 255, 255, 0.6);
+    }
   }
   
   .form-field__icon {
@@ -105,17 +113,13 @@
     transform: translateY(-50%);
     left: 12px;
     transition: fill 250ms var(--timing-function);
+    
+    .form-field__input:focus + & {
+      fill: var(--accent-color);
+    }
   }
   
-  .form-field__input::placeholder {
-    display: flex;
-    align-items: center;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: calc(20 / 16);
-    letter-spacing: 0.03em;
-    color: rgba(255, 255, 255, 0.6);
-  }
+  
   .form-textarea {
     margin-bottom: 20px;
   }
@@ -133,18 +137,19 @@
     color: var(--title-text-color);
     outline-color: transparent;
     transition: border 250ms var(--timing-function);
+    &:focus {
+      border: 2px solid var(--accent-color);
+    }
+
+    &::placeholder {
+      font-weight: 400;
+      font-size: 12px;
+      line-height: calc(14 / 12);
+      letter-spacing: 0.01em;
+      color: rgba(117, 117, 117, 0.5);
+    }
   }
-  .form-comment:focus {
-    border: 2px solid var(--accent-color);
-  }
-  
-  .form-comment::placeholder {
-    font-weight: 400;
-    font-size: 12px;
-    line-height: calc(14 / 12);
-    letter-spacing: 0.01em;
-    color: rgba(117, 117, 117, 0.5);
-  }
+ 
   
   .check-text {
     display: flex;
@@ -157,28 +162,30 @@
     letter-spacing: 0.03em;
     color: var(--primary-text-color);
     transition: background-color 250ms var(--timing-function), fill 250ms var(--timing-function);
-  }
-  .check-text span {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-right: 8.38px;
-    width: 16px;
-    height: 15px;
-    border: 2px solid var(--title-text-color);
-    border-radius: 3px;
-    fill: transparent;
-    transition: background-color 250ms var(--timing-function), fill 250ms var(--timing-function),
-      border-color 250ms var(--timing-function);
-  }
-  .input-check:checked + .check-text span {
-    background-color: var(--accent-color);
-    border-color: transparent;
-    fill: var(--white-primary-color);
-  }
   
-  .input-check:focus + .check-text span {
-    border-color: var(--accent-color);
+    span {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 8.38px;
+      width: 16px;
+      height: 15px;
+      border: 2px solid var(--title-text-color);
+      border-radius: 3px;
+      fill: transparent;
+      transition: background-color 250ms var(--timing-function), fill 250ms var(--timing-function),
+        border-color 250ms var(--timing-function);
+    }
+
+    .input-check:checked + & span {
+      background-color: var(--accent-color);
+      border-color: transparent;
+      fill: var(--white-primary-color);
+    }
+
+    .input-check:focus + & span {
+      border-color: var(--accent-color);
+    }
   }
   
   .policy-link {
@@ -208,9 +215,11 @@
     letter-spacing: 0.06em;
     color: var(--white-primary-color);
     transition: background-color 250ms var(--timing-function);
+    
+    &:hover,
+    &:focus {
+      background-color: #409be6;
+    }
   }
   
-  .send-btn:hover,
-  .send-btn:focus {
-    background-color: #188ce8;
-  }
+  

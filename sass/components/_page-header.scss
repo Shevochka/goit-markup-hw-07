@@ -32,25 +32,27 @@
     display: flex;
     gap: 50px;
     margin-left: 93px;
+    
   }
   
   .header-list .link.current {
     color: var(--accent-color);
+    &::after {
+      content: '';
+      position: absolute;
+      display: block;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 4px;
+      background-size: cover;
+      background-color: var(--accent-color);
+      border-radius: 2px;
+      transform: scaleX(1);
+      transition: 250ms var(--timing-function);
+    }
   }
-  .header-list .link.current::after {
-    content: '';
-    position: absolute;
-    display: block;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 4px;
-    background-size: cover;
-    background-color: var(--accent-color);
-    border-radius: 2px;
-    transform: scaleX(1);
-    transition: 250ms var(--timing-function);
-  }
+  
   
   .header-list__link {
     position: relative;
@@ -99,11 +101,12 @@
     color: var(--primary-text-color);
     font-style: normal;
     transition: color 250ms var(--timing-function);
+    &:hover,
+    &:hover,
+    &:focus,
+    &:focus {
+      color: var(--accent-color);
+    }
   }
   
-  .header-info__mail:hover,
-  .header-info__tel:hover,
-  .header-info__mail:focus,
-  .header-info__tel:focus {
-    color: var(--accent-color);
-  }
+ 

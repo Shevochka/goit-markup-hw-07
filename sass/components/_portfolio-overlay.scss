@@ -3,12 +3,6 @@
     overflow: hidden;
   }
   
-  .project-link:hover .overlay-thumb,
-  .project-link:focus .overlay-thumb {
-    opacity: 1;
-    transform: translateY(0%);
-  }
-  
   .overlay-thumb {
     position: absolute;
     display: block;
@@ -19,6 +13,11 @@
     background: rgba(33, 150, 243, 0.9);
     transform: translateY(101%);
     transition: transform 250ms var(--timing-function), opacity 250ms var(--timing-function);
+    .project-link:hover &,
+    .project-link:focus & {
+      opacity: 1;
+      transform: translateY(0%);
+    }
   }
   
   .overlay-text {
