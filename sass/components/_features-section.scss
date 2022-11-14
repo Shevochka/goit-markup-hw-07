@@ -8,7 +8,7 @@
     gap: 30px;
   }
   
-  .features-link {
+  .features__link {
     width: 270px;
     height: 120px;
     display: flex;
@@ -17,7 +17,7 @@
     background-color: var(--background-color-team);
   }
   
-  .features__title {
+  .features-list__title {
     font-size: 14px;
     line-height: 1.14;
     letter-spacing: 0.03em;
@@ -26,7 +26,7 @@
     margin-top: 30px;
     margin-bottom: 10px;
   }
-  .features__item {
+  .features-list__text {
     font-weight: 400;
     font-size: 14px;
     line-height: 1.71;

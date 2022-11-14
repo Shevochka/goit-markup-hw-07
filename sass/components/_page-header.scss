@@ -6,12 +6,12 @@
     border-bottom: 1px solid #ececec;
   }
   
-  .header-container {
+  .header__container {
     display: flex;
     align-items: center;
   }
   
-  .header-navigation {
+  .navigation {
     display: flex;
     align-items: center;
   }
@@ -24,18 +24,15 @@
     letter-spacing: 0.03em;
     color: var(--accent-color);
   }
-  .logo__header {
-    color: var(--logo-black-color);
-  }
+ 
   
-  .header-list {
+  .site-list {
     display: flex;
     gap: 50px;
-    margin-left: 93px;
-    
+    margin-left: 93px; 
   }
   
-  .header-list .link.current {
+  .site-list .link.current {
     color: var(--accent-color);
     &::after {
       content: '';
@@ -54,7 +51,7 @@
   }
   
   
-  .header-list__link {
+  .site-list__item {
     position: relative;
     transition-property: var(--accent-color);
     font-weight: 500;
@@ -72,25 +69,24 @@
   
  
   
-  .header-info {
+  .connect {
     display: flex;
     gap: 50px;
     margin-left: auto;
   }
   
-  .header-info__item {
+  .connect__item {
     display: flex;
     flex-wrap: wrap;
   }
   
-  .header-mail-icon,
-  .header-tel-icon {
+  .connect__icon{
     fill: currentColor;
     margin-right: 10px;
   }
   
-  .header-info__mail,
-  .header-info__tel {
+  .connect__mail,
+  .connect__tel {
     display: flex;
     justify-content: center;
     align-items: center;
